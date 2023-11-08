@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public class MovieListCoordinator {
-    // MARK: Private
+    // MARK: Properties
     var rootViewController = UINavigationController()
     var movieListViewController: MovieListViewController
     
