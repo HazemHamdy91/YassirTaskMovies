@@ -17,6 +17,7 @@
 		A19AF5742AFBB138007F4D95 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19AF5732AFBB138007F4D95 /* AppCoordinator.swift */; };
 		A19AF5772AFBB2DD007F4D95 /* MovieListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19AF5762AFBB2DD007F4D95 /* MovieListCoordinator.swift */; };
 		A19AF5792AFBB34D007F4D95 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19AF5782AFBB34D007F4D95 /* MovieListViewController.swift */; };
+		A19AF58C2AFBBFA8007F4D95 /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19AF58B2AFBBFA8007F4D95 /* MovieListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A19AF5732AFBB138007F4D95 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A19AF5762AFBB2DD007F4D95 /* MovieListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCoordinator.swift; sourceTree = "<group>"; };
 		A19AF5782AFBB34D007F4D95 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		A19AF58B2AFBBFA8007F4D95 /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				A19AF5762AFBB2DD007F4D95 /* MovieListCoordinator.swift */,
+				A19AF58B2AFBBFA8007F4D95 /* MovieListPresenter.swift */,
 				A19AF5782AFBB34D007F4D95 /* MovieListViewController.swift */,
 			);
 			path = MovieListFeature;
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19AF5742AFBB138007F4D95 /* AppCoordinator.swift in Sources */,
+				A19AF58C2AFBBFA8007F4D95 /* MovieListPresenter.swift in Sources */,
 				A19AF5792AFBB34D007F4D95 /* MovieListViewController.swift in Sources */,
 				A19AF5772AFBB2DD007F4D95 /* MovieListCoordinator.swift in Sources */,
 				A19AF5442AFBAF70007F4D95 /* AppDelegate.swift in Sources */,

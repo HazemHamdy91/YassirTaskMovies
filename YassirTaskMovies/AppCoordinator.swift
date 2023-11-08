@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class AppCoordinator {
-    
+
     public let rootViewController: UIViewController
 
     // MARK: Init
@@ -24,7 +24,7 @@ class AppCoordinator {
 
     private(set) var window: UIWindow!
     private let mainCoordinator = MovieListCoordinator(title: "Trending Movies")
-    
+
     // MARK: Start
 
     func start(window: UIWindow) {

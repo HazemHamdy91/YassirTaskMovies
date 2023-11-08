@@ -12,7 +12,7 @@ public class MovieListCoordinator {
     // MARK: Properties
     var rootViewController = UINavigationController()
     var movieListViewController: MovieListViewController
-    
+
     // MARK: Init
     public init(title: String) {
         // initiate NavigationController and movielistViewController
@@ -22,9 +22,18 @@ public class MovieListCoordinator {
 
     // MARK: Start
     public func start() {
-        // Setup movieListViewController as root vc of the navigation
+        // Setup movieListViewController as root vc of the navigation, setup presenter
         rootViewController = UINavigationController(rootViewController: movieListViewController)
         movieListViewController.navigationItem.largeTitleDisplayMode = .always
+        let presenter = MovieListPresenter(viewDelegate: movieListViewController, delegate: self)
+        movieListViewController.presenter = presenter
     }
-    
+
+}
+
+extension MovieListCoordinator: MovieListPresenterDelegate {
+
+    func didSelect(movie: String) {
+
+    }
 }
