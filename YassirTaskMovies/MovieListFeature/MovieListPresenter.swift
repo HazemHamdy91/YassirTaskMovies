@@ -25,9 +25,13 @@ class MovieListPresenter: NSObject {
         NetworkManager.shared.loadMovies(movieListType: MovieResult.self) { [weak self] result in
             switch result {
             case .success(let movieResult):
-                    self?.viewDelegate.reloadTableData(movies: movieResult.movies)
+                    if movieResult.movies?.count == 0 {
+                        self?.viewDelegate.showNoDataLabel()
+                    } else {
+                        self?.viewDelegate.reloadTableData(movies: movieResult.movies)
+                    }
             case .failure(let error):
-                    print(error.localizedDescription)
+                    self?.viewDelegate.show(errorMessage: error.localizedDescription)
             }
         }
     }
