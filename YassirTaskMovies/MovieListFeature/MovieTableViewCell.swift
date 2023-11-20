@@ -23,9 +23,10 @@ class MovieTableViewCell: UITableViewCell {
 
         nameLabel.text = movie.title
         releaseDateLabel.text = movie.apadtedReleaseYear()
-//        if let imageURL = URL(string: club.image ?? "") {
-//            self.clubImageView.af.setImage(withURL: imageURL)
-//        }
+        let imageURLString = Config.shared.imageBaseURL() + (movie.posterPath ?? "")
+        if let imageURL = URL(string: imageURLString) {
+            self.clubImageView.af.setImage(withURL: imageURL)
+        }
     }
 
     // MARK: Init

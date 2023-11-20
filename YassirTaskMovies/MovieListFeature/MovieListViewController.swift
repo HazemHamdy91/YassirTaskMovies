@@ -50,6 +50,10 @@ class MovieListViewController: UITableViewController {
         cell.configureCell(with: movies[indexPath.row])
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
 }
 
 extension MovieListViewController: MovieListView {

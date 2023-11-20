@@ -26,4 +26,11 @@ class NetworkManager {
             completion(response.result)
         }
     }
+
+    func loadImageConfiguration(completion: @escaping (_ result: Swift.Result<Image, AFError>) -> Void) {
+        // swiftlint:disable:next line_length
+        AF.request("https://api.themoviedb.org/3/configuration", headers: headers).responseDecodable(of: Image.self) { response in
+            completion(response.result)
+        }
+    }
 }
