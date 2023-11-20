@@ -9,13 +9,14 @@ import Foundation
 import UIKit
 
 protocol MovieListView: AnyObject {
-    func reloadTableData()
+    func reloadTableData(movies: [Movie]?)
 }
 
 class MovieListViewController: UITableViewController {
 
     // MARK: Proprties
     var presenter: MovieListPresenter?
+    var movies: [Movie]?
 
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -32,12 +33,28 @@ class MovieListViewController: UITableViewController {
 
     private func setupViews() {
         view.backgroundColor = .white
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+
+    // MARK: UITableViewDataSource, UITableViewDelegate
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movies?.count ?? 0
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MovieTableViewCell,
+              let movies = movies
+        else { return UITableViewCell() }
+        cell.configureCell(with: movies[indexPath.row])
+        return cell
     }
 }
 
 extension MovieListViewController: MovieListView {
-
-    func reloadTableData() {
+    func reloadTableData(movies: [Movie]?) {
+        self.movies = movies
+        tableView.reloadData()
     }
-
 }
