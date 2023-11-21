@@ -23,13 +23,13 @@ class Config {
             }
         }
     }
-    func imageBaseURL() -> String {
+    func imageBaseURL(isThumbnail: Bool = true) -> String {
         guard let imageConfiguration = imageConfiguration,
               let baseURL = imageConfiguration.baseURL,
               let posterSizes = imageConfiguration.posterSizes
         else { return "" }
         // check first expected size inside returned posterSizes
-        if posterSizes.contains("w500") {
+        if isThumbnail, posterSizes.contains("w500") {
             return baseURL + "w500"
         } else {
             return baseURL + (posterSizes.last ?? "")

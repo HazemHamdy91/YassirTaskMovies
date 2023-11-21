@@ -14,7 +14,6 @@ public struct MovieResult: Codable {
     enum CodingKeys: String, CodingKey {
            case movies = "results"
        }
-
 }
 
 public struct Movie: Codable {

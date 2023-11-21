@@ -33,7 +33,12 @@ public class MovieListCoordinator {
 
 extension MovieListCoordinator: MovieListPresenterDelegate {
 
-    func didSelect(movie: String) {
-
+    func didSelect(movie: Movie) {
+        let movieDetailsViewController = MovieDetailsViewController()
+        movieDetailsViewController.navigationItem.largeTitleDisplayMode = .always
+        let presenter = MovieDetailsPresenter(viewDelegate: movieDetailsViewController)
+        movieDetailsViewController.presenter = presenter
+        movieDetailsViewController.movie = movie
+        rootViewController.pushViewController(movieDetailsViewController, animated: true)
     }
 }

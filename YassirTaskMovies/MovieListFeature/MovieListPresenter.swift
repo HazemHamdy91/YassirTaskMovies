@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MovieListPresenterDelegate: AnyObject {
-    func didSelect(movie: String)
+    func didSelect(movie: Movie)
 }
 
 class MovieListPresenter: NSObject {
@@ -34,5 +34,9 @@ class MovieListPresenter: NSObject {
                     self?.viewDelegate.show(errorMessage: error.localizedDescription)
             }
         }
+    }
+
+    func didSelect(movie: Movie) {
+        delegate?.didSelect(movie: movie)
     }
 }
