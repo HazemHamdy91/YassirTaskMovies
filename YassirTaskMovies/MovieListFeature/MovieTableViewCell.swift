@@ -20,7 +20,6 @@ class MovieTableViewCell: UITableViewCell {
     // MARK: Interface
 
     func configureCell(with movie: Movie) {
-
         nameLabel.text = movie.title
         releaseDateLabel.text = movie.apadtedReleaseYear()
         let imageURLString = Config.shared.imageBaseURL() + (movie.posterPath ?? "")
